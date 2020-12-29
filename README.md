@@ -120,7 +120,7 @@ On the server command line, you can use /tp @p x y z to teleport yourself to pos
 ### Et voilà:
 
 <p align="center">
-  <img src="example.gif">
+  <img src="./assets/example.gif">
 </p>  
 
 </br>  
@@ -172,3 +172,9 @@ Look for the one that includes `java-1.8` to find the path to use with Evocraft.
 ```
 
 If you're using your offical Minecraft to render/interact with Evocraft, you'll want to make sure that Minecraft is using the same Java version 1.12.2. In the Minecraft launcher under installations, select your v1.12.2 installation and click on the ellipsis symbol to choose options. In the options tab, choose "MORE OPTIONS", where you should see a field to specify the Java executable. Paste the same path as used above when launching Evocraft into this box and you should now be able to launch your v1.12.2 Minecraft without any problems. 
+
+
+
+<p align="center">
+  <img src="./assets/choose_java_version.png">
+</p>  
