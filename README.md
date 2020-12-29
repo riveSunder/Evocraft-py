@@ -19,6 +19,13 @@ A Python interface for Minecraft built on [grpc](https://github.com/real-itu/min
    - `git clone https://github.com/real-itu/Evocraft-py`
    - `pip install grpc`
 
+   a. On Linux (Ubuntu):
+
+      - `git clone https://github.com/real-itu/Evocraft-py`
+      - `pip install grpcio google`
+      - `pip install --upgrade google-api-python-client`
+
+
 
 ### 2. Starting the modded Minecraft server
 
@@ -145,5 +152,22 @@ In this section we'll compile implementations of evolutionary algorithms using t
 	url = {https://arxiv.org/abs/2012.04751v1}
 }
  
+### Troubleshooting
 
- ```   
+Perhaps you're having a bit of a problem setting up or running Evocraft to your satisfaction, but don't despair! Chances are someone else has encountered the same problem before, and if not, here's your chance to tackle the problem and document your solution to help those that run into the same thing later. Please feel free to raise an issue if you can't get something to work, and we'll add the solution to this troubleshooting section after figuring it out. Here are some issues we've already encountered:
+
+#### Using the right Java version
+
+There may be more than one version of Java installed on your machine, for example the Minecraft launcher tends to install Java 1.12 and use it by default, even if you've previously installed Java 1.8 and only Java 1.8. To list the currently installed versions, use 
+
+```   
+update-java-alternatives --list
+```
+
+Look for the one that includes `java-1.8` to find the path to use with Evocraft. If another Java version is your default, you can specify the 'java-1.8' path when launching an Evocraft server. For example, it may look something like this
+
+```
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -jar spongevanilla-1.12.2-7.3.0.jar
+```
+
+If you're using your offical Minecraft to render/interact with Evocraft, you'll want to make sure that Minecraft is using the same Java version 1.12.2. In the Minecraft launcher under installations, select your v1.12.2 installation and click on the ellipsis symbol to choose options. In the options tab, choose "MORE OPTIONS", where you should see a field to specify the Java executable. Paste the same path as used above when launching Evocraft into this box and you should now be able to launch your v1.12.2 Minecraft without any problems. 
