@@ -151,6 +151,7 @@ In this section we'll compile implementations of evolutionary algorithms using t
 	eprint = {2012.04751},
 	url = {https://arxiv.org/abs/2012.04751v1}
 }
+```
  
 ### Troubleshooting
 
