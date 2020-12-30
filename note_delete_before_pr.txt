@@ -1,0 +1,49 @@
+Collecting grpc
+  Downloading grpc-1.0.0.tar.gz (5.2 kB)
+    ERROR: Command errored out with exit status 1:
+     command: /home/rlygr/.venv/evocraft/bin/python3 -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-71hcd84x/grpc_3d5c11353d75417ead293667c9e7b51f/setup.py'"'"'; __file__='"'"'/tmp/pip-install-71hcd84x/grpc_3d5c11353d75417ead293667c9e7b51f/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /tmp/pip-pip-egg-info-tax7eknr
+         cwd: /tmp/pip-install-71hcd84x/grpc_3d5c11353d75417ead293667c9e7b51f/
+    Complete output (5 lines):
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-install-71hcd84x/grpc_3d5c11353d75417ead293667c9e7b51f/setup.py", line 33, in <module>
+        raise RuntimeError(HINT)
+    RuntimeError: Please install the official package with: pip install grpcio
+    ----------------------------------------
+ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+
+###
+# fix
+>>pip install grpcio
+###
+
+Traceback (most recent call last):
+  File "example.py", line 3, in <module>
+    import minecraft_pb2_grpc
+  File "/home/rlygr/Desktop/projects/Evocraft-py/minecraft_pb2_grpc.py", line 5, in <module>
+    from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+ModuleNotFoundError: No module named 'google'
+
+
+###
+# try
+>>pip install google
+# but error persists
+# advice from https://stackoverflow.com/questions/36183486/importerror-no-module-named-google#53901668
+>>pip install --upgrade google-api-python-client
+# the above downloaded quite a few packages, error disappeared
+###
+
+You may have more than one Java installed, for example the Minecraft launcher tends to install Java 1.12, but we need to use Java 1.8 for Evocraft. You don't need to remove anything, just make sure to use the right version in the right place. To list the currently installed versions, use 
+
+```
+update-java-alternatives --list
+``` 
+
+and look for the one that contains `java-1.8.0`. That's the one we'll need to launch the Evocraft server. For example, on my machine launching Evocraft looks like:
+
+```
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -jar spongevanilla-1.12.2-7.3.0.jar
+```
+
+You'll also need to make sure to use the same Java version if you are starting Minecraft from the launcher. In the Minecraft launcher under installations, select your v1.12.2 installation, click on the ellipsis symbol and choose options. In the options screen, choose "MORE OPTIONS", where you should see the option to specify the Java executable. You'll want to paste the same path as used above to launch Evocraft into that box. 
